@@ -24,10 +24,9 @@ header {
   background-color: #111;
   color: #00ff88;
   text-align: center;
-  padding: 1.5rem 0;
-  font-size: 2.5rem;
+  padding: 1.2rem 1rem;
+  font-size: 2rem;
   font-weight: bold;
-  font-family: 'Fira Code', monospace;
   letter-spacing: 2px;
   box-shadow: 0 2px 5px rgba(0, 255, 136, 0.3);
   text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
@@ -36,23 +35,23 @@ header {
 
 /* Layout */
 main {
-  display: flex;
   flex: 1;
+  display: flex;
   padding: 1rem;
   gap: 1rem;
   overflow: hidden;
-  height: calc(100vh - 5.5rem); /* Adjusted for header */
+  height: calc(100vh - 5rem); /* Adjusted for header */
 }
 
-/* Left side (Editor + Review button) */
+/* Left Section */
 .left {
   flex: 1;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  max-width: 50%;
 }
 
+/* Code Editor */
 .code {
   flex: 1;
   overflow: auto;
@@ -84,7 +83,7 @@ main {
   transform: scale(1.02);
 }
 
-/* Right side (Markdown output) */
+/* Right Section (Markdown output) */
 .right {
   flex: 1;
   overflow-y: auto;
@@ -93,10 +92,10 @@ main {
   border-radius: 10px;
   background-color: #1e1e2f;
   scroll-behavior: smooth;
-  max-width: 50%;
   color: #ddd;
 }
 
+/* Markdown Styling */
 .right h1,
 .right h2,
 .right h3 {
@@ -136,4 +135,32 @@ main {
 .code::-webkit-scrollbar-track,
 .right::-webkit-scrollbar-track {
   background: transparent;
+}
+
+/* Mobile & Tablet Responsive */
+@media (max-width: 960px) {
+  main {
+    flex-direction: column;
+    height: auto;
+    overflow: auto;
+  }
+
+  .left, .right {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .review {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  header {
+    font-size: 1.5rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .right pre, .right code {
+    font-size: 0.85rem;
+  }
 }
