@@ -13,7 +13,7 @@ function App() {
   return 1 + 1;
 }`)
 
-  const [review, setReview] = useState(``)
+  const [review, setReview] = useState(`<hey!  write your code here :) >`)
 
   useEffect(() => {
     prism.highlightAll()
