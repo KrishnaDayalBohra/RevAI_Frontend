@@ -9,11 +9,9 @@ import axios from 'axios'
 import './App.css'
 
 function App() {
-  const [code, setCode] = useState(`function sum() {
-  return 1 + 1;
-}`)
+  const [code, setCode] = useState(`<Hey! Write your Code here :) >`)
 
-  const [review, setReview] = useState(`<hey!  write your code here :) >`)
+  const [review, setReview] = useState(``)
 
   useEffect(() => {
     prism.highlightAll()
